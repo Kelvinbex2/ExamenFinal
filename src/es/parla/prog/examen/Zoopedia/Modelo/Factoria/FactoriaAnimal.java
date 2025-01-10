@@ -11,12 +11,12 @@ public class FactoriaAnimal {
     public static Animal crearAnimal(int opc, int numeroCuerno,  int colmillos) {
         switch (opc) {
             case 1:
-                if (numeroCuerno == 0 && colmillos == 0) {
+                if ((numeroCuerno >= 0 || numeroCuerno <1) && (colmillos >= 0 || colmillos < 1)) {
                     return new NivelNormal();
                 }
 
             case 2:
-                if (numeroCuerno <=2 && colmillos <=2) {
+                if ((numeroCuerno >= 1|| numeroCuerno <3) && (colmillos >=1 || colmillos <3)) {
                     return new NivelRaro();
                 }
 

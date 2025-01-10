@@ -1,23 +1,20 @@
 package es.parla.prog.examen.Zoopedia.Vista;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
 import es.parla.prog.examen.Zoopedia.Entrada.Entrada;
 import es.parla.prog.examen.Zoopedia.Modelo.Animal;
+import es.parla.prog.examen.Zoopedia.Modelo.Factoria.FactoriaAnimal;
 import es.parla.prog.examen.Zoopedia.Modelo.NivelNormal;
 import es.parla.prog.examen.Zoopedia.Modelo.NivelPokemonn;
 import es.parla.prog.examen.Zoopedia.Modelo.NivelRaro;
 import es.parla.prog.examen.Zoopedia.Modelo.Usuario;
 import es.parla.prog.examen.Zoopedia.Modelo.Zoopedia;
-import es.parla.prog.examen.Zoopedia.Modelo.Factoria.FactoriaAnimal;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class App {
     static Zoopedia zoopedia;
@@ -258,7 +255,7 @@ public class App {
     public static void mostrarFavourito() {
         int cuerno = 0;
         int colmillos = 0;
-        String msg = "";
+        
         for (Animal animal : zoopedia.getAn()) {
             if (animal.isEsFavourito() == true) {
                 if (animal instanceof NivelNormal) {
@@ -298,9 +295,9 @@ public class App {
         try {
             
                 for (Animal a : zoopedia.getAn()) {
-                    BufferedWriter buf = new BufferedWriter(new FileWriter("Animal.txt"));
-                    buf.write("El usuario " + usuario.getNombre() + " hizo esta operaciones durante la vista " + msg + " ,tiene " + a.getNumeroCuerno() + " cuerno y  " + a.getColmillos() + " colmillos\n");
-                    buf.close();
+                    try (BufferedWriter buf = new BufferedWriter(new FileWriter("Animal.txt"))) {
+                        buf.write("El usuario " + usuario.getNombre() + " hizo esta operaciones durante la vista " + msg + " ,tiene " + a.getNumeroCuerno() + " cuerno y  " + a.getColmillos() + " colmillos\n");
+                    }
                 }
             
 
