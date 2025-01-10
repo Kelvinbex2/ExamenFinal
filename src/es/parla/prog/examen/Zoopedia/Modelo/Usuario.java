@@ -1,18 +1,16 @@
 package es.parla.prog.examen.Zoopedia.Modelo;
 
-import java.time.LocalDate;
-
 public class Usuario {
     protected String nombre;
     protected String apellidos;
     protected int edad;
-    protected LocalDate fecha;
+    
 
-    public Usuario(String nombre, String apellidos, int edad, LocalDate fecha) {
+    public Usuario(String nombre, String apellidos, int edad) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
-        this.fecha = fecha;
+      
     }
 
     public Usuario() {
@@ -42,13 +40,7 @@ public class Usuario {
         this.edad = edad;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
+    
 
    
 }

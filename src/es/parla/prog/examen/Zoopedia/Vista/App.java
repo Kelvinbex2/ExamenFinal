@@ -24,9 +24,9 @@ public class App {
     static String msg = "";
 
     public static void main(String[] args) throws Exception {
-        LocalDate date = crearFecha();
-        zoopedia = new Zoopedia("El paradise", date);
-        iuUsuario = new Usuario("Kelvin", "Obamedo", 22, date);
+        
+        zoopedia = new Zoopedia("El paradise", );
+        iuUsuario = new Usuario("Kelvin", "Obamedo", 22);
         zoopedia.crearUsuario(iuUsuario);
         zo.add(zoopedia);
         crearMenu();

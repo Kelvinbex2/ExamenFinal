@@ -1,18 +1,16 @@
 package es.parla.prog.examen.Zoopedia.Modelo;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Zoopedia {
     protected String nombre;
-    protected LocalDate fecha;
     protected List<Animal> an;
     protected List<Usuario> us;
 
-    public Zoopedia(String nombre, LocalDate fecha) {
+    public Zoopedia(String nombre) {
         this.nombre = nombre;
-        this.fecha = fecha;
+       
         this.an = new ArrayList<>();
         this.us = new ArrayList<>();
     }
@@ -25,13 +23,7 @@ public class Zoopedia {
         this.nombre = nombre;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
+   
 
     public List<Animal> getAn() {
         return an;
