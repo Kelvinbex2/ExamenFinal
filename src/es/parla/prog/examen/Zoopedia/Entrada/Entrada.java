@@ -10,18 +10,31 @@ public class Entrada {
     public static int leerEntero() {
         int num = 0;
 
+        boolean esValido=false;
+        while (!esValido) { 
+            
+        
         try {
+            
             num = sc.nextInt();
 
             if (num < 0) {
+                esValido = false;
                 throw new InputMismatchException("Numero negativo, debe ser mayor aue 0.");
+               
+            }else{
+                esValido = true;
             }
-        } catch (InputMismatchException e) {
-            System.out.println("No valido.");
 
+        } catch (InputMismatchException e) {
+            System.out.print("No valido. Vuelve a meter el dato:  ");
+
+
+            esValido = false;
         } finally {
             sc.nextLine();
         }
+    }
 
         return num;
     }
